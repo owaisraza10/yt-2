@@ -10,7 +10,7 @@ app.listen(10000, () => console.log('Web server listening on port 10000'));
 function startStream() {
     console.log("Starting stream...");
     // Replace YOUR_STREAM_KEY below
-    const stream = spawn('bash', ['-c', 'yt-dlp -4 --proxy "http://134.209.29.120:3128" --cookies cookies.txt --extractor-args "youtube:client=android" --remote-components ejs:github -o - "https://www.youtube.com/watch?v=Rs7St51oDDc" | ffmpeg -i pipe:0 -c:v copy -c:a copy -f flv rtmp://a.rtmp.youtube.com/live2/k2bw-rtyc-h8hd-9hhp-6tt3']);
+    const stream = spawn('bash', ['-c', 'yt-dlp -4 --proxy "http://146.190.60.147:8018" --cookies cookies.txt --extractor-args "youtube:client=android" --remote-components ejs:github -o - "https://www.youtube.com/watch?v=Rs7St51oDDc" | ffmpeg -i pipe:0 -c:v copy -c:a copy -f flv rtmp://a.rtmp.youtube.com/live2/k2bw-rtyc-h8hd-9hhp-6tt3']);
 
     stream.stdout.on('data', (data) => console.log(`Data: ${data}`));
     stream.stderr.on('data', (data) => console.error(`Log: ${data}`));
