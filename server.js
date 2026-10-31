@@ -11,7 +11,7 @@ async function startStream() {
     try {
         console.log("Fetching fresh rotating proxy list...");
         // Pull the live list of HTTP proxies
-        const response = await fetch('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=5000');
+        const response = await fetch('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=2000&anonymity=elite');
         const text = await response.text();
         
         // Clean the text data into an array of IP:PORT strings
